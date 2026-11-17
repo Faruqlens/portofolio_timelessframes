@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#10100f">
   <meta name="description" content="Faruq Lens — Photography, Videography & Editing. Timeless Frames, cerita yang tetap hidup.">
+  <meta name="author" content="Faruq Lens">
   <title>Faruq Lens — Timeless Frames</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -55,17 +56,17 @@
     .portfolio{background:#151513}
     .filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:30px}
     .filter{background:transparent;color:var(--muted);border:1px solid var(--line);padding:9px 15px;font-size:10px;letter-spacing:.1em;text-transform:uppercase;cursor:pointer}
-    .filter.active,.filter:hover{color:var(--cream);border-color:var(--accent)}
-    .gallery{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
-    .work{position:relative;overflow:hidden;background:#24231f;min-height:270px;grid-column:span 4;cursor:pointer}
-    .work.tall{grid-row:span 2;min-height:560px}.work.wide{grid-column:span 8}
+    .filter.active,.filter:hover{color:var(--cream);border-color:var(--accent);background:rgba(217,168,108,.09)}
+    .gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-auto-flow:dense;gap:16px;align-items:stretch}
+    .work{position:relative;overflow:hidden;background:#24231f;min-height:300px;grid-column:span 1;cursor:pointer;isolation:isolate;border:1px solid rgba(255,255,255,.05)}
+    .work.tall{min-height:440px;grid-row:span 1}.work.wide{grid-column:span 2}
     .work img{width:100%;height:100%;min-height:inherit;position:absolute;inset:0;object-fit:cover;transition:transform .7s cubic-bezier(.2,.7,.2,1),filter .4s;filter:brightness(.78) saturate(.8)}
     .work:hover img{transform:scale(1.045);filter:brightness(.58) saturate(.9)}
     .work-info{position:absolute;inset:auto 0 0;padding:28px 24px;background:linear-gradient(0deg,rgba(0,0,0,.8),transparent);transform:translateY(8px);transition:transform .3s}
     .work:hover .work-info{transform:translateY(0)}
     .work-info small{color:var(--accent);font-size:9px;letter-spacing:.2em;text-transform:uppercase}
     .work-info h3{font:500 25px 'Playfair Display',serif;margin:6px 0 0}
-    .work.hidden{display:none}
+    .work.hidden{display:none}.work.image-missing:after,.about-image.image-missing:after{content:"Foto belum ditemukan — periksa nama file di folder assets";position:absolute;inset:0;display:grid;place-items:center;padding:24px;text-align:center;color:var(--muted);font-size:12px;background:#24231f}
     .services-grid{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
     .service{padding:32px 28px 34px 0;border-right:1px solid var(--line);margin-right:28px}
     .service:last-child{border:0;margin:0;padding-right:0}
@@ -105,10 +106,10 @@
       .wrap{width:min(100% - 32px,var(--max))}.links{display:none;position:absolute;left:0;right:0;top:81px;padding:22px 24px;background:#141412;border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start;gap:18px}.links.open{display:flex}.nav-cta{display:none}.menu-btn{display:block}
       .hero{min-height:630px}.hero-bg{background-position:60% center;background-image:linear-gradient(90deg,rgba(16,16,15,.94),rgba(16,16,15,.5)),linear-gradient(0deg,var(--bg),transparent 35%),url('assets/concert-01.jpg')}
       .hero-content{padding:80px 0}.hero-note{display:none}.section{padding:78px 0}.section-head{display:block}.section-head p{margin-top:20px}.about-grid,.contact-grid{grid-template-columns:1fr;gap:38px}.about-image,.about-image img{height:390px;min-height:390px}
-      .gallery{grid-template-columns:repeat(2,1fr);gap:10px}.work,.work.wide{grid-column:span 1;min-height:260px}.work.tall{grid-row:span 1;min-height:260px}.work-info{padding:18px 14px}.work-info h3{font-size:20px}
+      .gallery{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.work,.work.wide{grid-column:span 1;min-height:280px}.work.tall{grid-row:span 1;min-height:280px}.work-info{padding:18px 14px}.work-info h3{font-size:20px}
       .services-grid{grid-template-columns:1fr}.service{border-right:0;border-bottom:1px solid var(--line);margin:0;padding:28px 0}.service:last-child{padding:28px 0}.process-grid{grid-template-columns:repeat(2,1fr)}
     }
-    @media(max-width:460px){h1{font-size:58px}.hero-copy{font-size:13px}.gallery{grid-template-columns:1fr}.work,.work.wide,.work.tall{min-height:310px}.process-grid{grid-template-columns:1fr}.stats{gap:22px}.stat strong{font-size:25px}.footer-inner{align-items:flex-start;flex-direction:column}}
+    @media(max-width:460px){h1{font-size:58px}.hero-copy{font-size:13px}.gallery{grid-template-columns:1fr}.work,.work.wide,.work.tall{grid-column:span 1;min-height:320px}.process-grid{grid-template-columns:1fr}.stats{gap:22px}.stat strong{font-size:25px}.footer-inner{align-items:flex-start;flex-direction:column}}
   </style>
 </head>
 <body>
@@ -158,80 +159,86 @@
       <div class="wrap">
         <div class="section-head reveal"><div><div class="eyebrow">Selected stories</div><h2>Timeless Frames<span style="color:var(--accent)">.</span></h2></div><p>Kumpulan momen yang punya cerita. Pilih kategori untuk menjelajahi karya berdasarkan suasana dan jenis produksi.</p></div>
         <div class="filters reveal" role="group" aria-label="Filter portofolio">
-          <button class="filter active" data-filter="all">Semua foto</button><button class="filter" data-filter="concert">Live Concert</button><button class="filter" data-filter="behind">Behind the Scenes</button>
+          <button class="filter active" data-filter="all">Semua Momen</button>
+          <button class="filter" data-filter="event">Event &amp; Community</button>
+          <button class="filter" data-filter="portrait">Portrait</button>
+          <button class="filter" data-filter="nature">Nature &amp; Landscape</button>
+          <button class="filter" data-filter="adventure">Adventure &amp; Documentary</button>
+          <button class="filter" data-filter="creative">Creative</button>
+          <button class="filter" data-filter="concert">Live Concert</button>
         </div>
         
 <div class="gallery">
 
   <!-- FOTO LAMA: ROOT REPOSITORY -->
-  <article class="work tall reveal" data-category="behind">
+  <article class="work tall reveal" data-category="event">
     <img loading="lazy" src="DSC_0001.jpg" alt="Dokumentasi Faruq Lens 01">
     <div class="work-info"><small>Documentation · 01</small><h3>Captured Memories</h3></div>
   </article>
 
-  <article class="work reveal" data-category="behind">
+  <article class="work reveal" data-category="event">
     <img loading="lazy" src="DSC_0002.jpg" alt="Dokumentasi Faruq Lens 02">
     <div class="work-info"><small>Documentation · 02</small><h3>A Moment to Remember</h3></div>
   </article>
 
-  <article class="work wide reveal" data-category="behind">
+  <article class="work wide reveal" data-category="event">
     <img loading="lazy" src="DSC_0003.jpg" alt="Dokumentasi Faruq Lens 03">
     <div class="work-info"><small>Documentation · 03</small><h3>Stories in Frames</h3></div>
   </article>
 
-  <article class="work reveal" data-category="behind">
+  <article class="work reveal" data-category="event">
     <img loading="lazy" src="DSC_0004.jpg" alt="Dokumentasi Faruq Lens 04">
     <div class="work-info"><small>Documentation · 04</small><h3>Every Little Detail</h3></div>
   </article>
 
-  <article class="work tall reveal" data-category="behind">
+  <article class="work tall reveal" data-category="event">
     <img loading="lazy" src="DSC_0005.jpg" alt="Dokumentasi Faruq Lens 05">
     <div class="work-info"><small>Documentation · 05</small><h3>Beyond the Moment</h3></div>
   </article>
 
-  <article class="work reveal" data-category="behind">
+  <article class="work reveal" data-category="event">
     <img loading="lazy" src="DSC_0006.jpg" alt="Dokumentasi Faruq Lens 06">
     <div class="work-info"><small>Documentation · 06</small><h3>Visual Stories</h3></div>
   </article>
 
-  <article class="work wide reveal" data-category="behind">
+  <article class="work wide reveal" data-category="event">
     <img loading="lazy" src="DSC_0007.jpg" alt="Dokumentasi Faruq Lens 07">
     <div class="work-info"><small>Documentation · 07</small><h3>Timeless Memories</h3></div>
   </article>
 
-  <article class="work reveal" data-category="behind">
+  <article class="work reveal" data-category="event">
     <img loading="lazy" src="DSC_0008.jpg" alt="Dokumentasi Faruq Lens 08">
     <div class="work-info"><small>Documentation · 08</small><h3>Behind the Story</h3></div>
   </article>
 
-  <article class="work reveal" data-category="behind">
+  <article class="work reveal" data-category="event">
     <img loading="lazy" src="DSC_0009.jpg" alt="Dokumentasi Faruq Lens 09">
     <div class="work-info"><small>Documentation · 09</small><h3>Through the Lens</h3></div>
   </article>
 
-  <article class="work wide reveal" data-category="behind">
+  <article class="work wide reveal" data-category="event">
     <img loading="lazy" src="DSC_0010.jpg" alt="Dokumentasi Faruq Lens 10">
     <div class="work-info"><small>Documentation · 10</small><h3>Unforgettable Scenes</h3></div>
   </article>
 
-  <article class="work reveal" data-category="behind">
+  <article class="work reveal" data-category="event">
     <img loading="lazy" src="DSC_0011.jpg" alt="Dokumentasi Faruq Lens 11">
     <div class="work-info"><small>Documentation · 11</small><h3>One More Memory</h3></div>
   </article>
 
-  <article class="work reveal" data-category="behind">
+  <article class="work reveal" data-category="portrait">
     <img loading="lazy" src="Faruq_profil.jpg" alt="Profil Faruq Lens">
     <div class="work-info"><small>Personal Profile</small><h3>The Photographer</h3></div>
   </article>
 
-  <article class="work tall reveal" data-category="behind">
+  <article class="work tall reveal" data-category="adventure">
     <img loading="lazy" src="faruq_kerja.jpg" alt="Faruq sedang bekerja">
     <div class="work-info"><small>Behind the Scenes</small><h3>Behind the Camera</h3></div>
   </article>
 
   <!-- FOTO TERBARU: FOLDER ASSETS -->
 
-  <article class="work tall reveal" data-category="behind">
+  <article class="work tall reveal" data-category="nature">
     <img loading="lazy" src="assets/architecture-golden-hour.jpg" alt="Arsitektur saat golden hour">
     <div class="work-info"><small>Architecture</small><h3>Golden Hour</h3></div>
   </article>
@@ -266,12 +273,12 @@
     <div class="work-info"><small>Live Concert · 06</small><h3>Closer to the Crowd</h3></div>
   </article>
 
-  <article class="work tall reveal" data-category="behind">
+  <article class="work tall reveal" data-category="concert">
     <img loading="lazy" src="assets/concert-07.jpg" alt="Suasana konser 07">
     <div class="work-info"><small>Event Atmosphere · 07</small><h3>Before the Applause</h3></div>
   </article>
 
-  <article class="work reveal" data-category="behind">
+  <article class="work reveal" data-category="concert">
     <img loading="lazy" src="assets/concert-08.jpg" alt="Behind the scenes konser 08">
     <div class="work-info"><small>Behind the Scenes · 08</small><h3>Behind Every Frame</h3></div>
   </article>
@@ -281,57 +288,57 @@
     <div class="work-info"><small>Live Concert · 09</small><h3>Notes to Remember</h3></div>
   </article>
 
-  <article class="work reveal" data-category="behind">
+  <article class="work reveal" data-category="concert">
     <img loading="lazy" src="assets/concert-10.jpg" alt="Dokumentasi konser 10">
     <div class="work-info"><small>Stage Perspective · 10</small><h3>From Another Angle</h3></div>
   </article>
 
-  <article class="work reveal" data-category="behind">
+  <article class="work reveal" data-category="creative">
     <img loading="lazy" src="assets/creative-long-exposure.jpg" alt="Fotografi long exposure">
     <div class="work-info"><small>Creative Photography</small><h3>Motion and Light</h3></div>
   </article>
 
-  <article class="work wide reveal" data-category="behind">
+  <article class="work wide reveal" data-category="adventure">
     <img loading="lazy" src="assets/field-documentary.jpg" alt="Dokumentasi lapangan">
     <div class="work-info"><small>Field Documentary</small><h3>Stories on Location</h3></div>
   </article>
 
-  <article class="work reveal" data-category="behind">
+  <article class="work reveal" data-category="event">
     <img loading="lazy" src="assets/group-night-event.jpg" alt="Dokumentasi acara malam">
     <div class="work-info"><small>Event Photography</small><h3>A Night to Remember</h3></div>
   </article>
 
-  <article class="work tall reveal" data-category="behind">
+  <article class="work tall reveal" data-category="portrait">
     <img loading="lazy" src="assets/group-night-portrait.jpg" alt="Potret kelompok malam hari">
     <div class="work-info"><small>Group Portrait</small><h3>Together in One Frame</h3></div>
   </article>
 
-  <article class="work wide reveal" data-category="behind">
+  <article class="work wide reveal" data-category="nature">
     <img loading="lazy" src="assets/mountain-above-clouds.jpg" alt="Pemandangan gunung di atas awan">
     <div class="work-info"><small>Landscape Photography</small><h3>Above the Clouds</h3></div>
   </article>
 
-  <article class="work reveal" data-category="behind">
+  <article class="work reveal" data-category="adventure">
     <img loading="lazy" src="assets/mountain-portrait.jpg" alt="Potret di pegunungan">
     <div class="work-info"><small>Mountain Portrait</small><h3>Into the Wild</h3></div>
   </article>
 
-  <article class="work reveal" data-category="behind">
+  <article class="work reveal" data-category="event">
     <img loading="lazy" src="assets/pencak-silat-team.jpg" alt="Tim pencak silat">
     <div class="work-info"><small>Sports Photography</small><h3>Strength and Unity</h3></div>
   </article>
 
-  <article class="work wide reveal" data-category="behind">
+  <article class="work wide reveal" data-category="event">
     <img loading="lazy" src="assets/pesantren-gathering.jpg" alt="Kegiatan pesantren">
     <div class="work-info"><small>Event Documentation</small><h3>Moments of Togetherness</h3></div>
   </article>
 
-  <article class="work reveal" data-category="behind">
+  <article class="work reveal" data-category="adventure">
     <img loading="lazy" src="assets/photographer-break.jpg" alt="Fotografer saat istirahat">
     <div class="work-info"><small>Behind the Lens</small><h3>A Moment to Pause</h3></div>
   </article>
 
-  <article class="work tall reveal" data-category="behind">
+  <article class="work tall reveal" data-category="portrait">
     <img loading="lazy" src="assets/photographer-portrait.jpg" alt="Potret fotografer">
     <div class="work-info"><small>Photographer Portrait</small><h3>The Eye Behind the Lens</h3></div>
   </article>
@@ -380,10 +387,22 @@
     menuBtn.addEventListener('click',()=>{navLinks.classList.toggle('open');menuBtn.setAttribute('aria-expanded',navLinks.classList.contains('open'));});
     navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>navLinks.classList.remove('open')));
     document.querySelectorAll('.filter').forEach(btn=>btn.addEventListener('click',()=>{
-      document.querySelectorAll('.filter').forEach(b=>b.classList.remove('active'));btn.classList.add('active');
+      document.querySelectorAll('.filter').forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
       const category=btn.dataset.filter;
-      document.querySelectorAll('.work').forEach(card=>card.classList.toggle('hidden',category!=='all'&&card.dataset.category!==category));
+      document.querySelectorAll('.work').forEach(card=>{
+        const show=category==='all'||card.dataset.category===category;
+        card.classList.toggle('hidden',!show);
+      });
     }));
+    // Tandai gambar yang gagal dimuat agar mudah ditemukan saat pengecekan file assets.
+    document.querySelectorAll('.work img, .about-image img').forEach(img=>{
+      img.addEventListener('error',()=>{
+        img.style.display='none';
+        const holder=img.closest('.work, .about-image');
+        if(holder){holder.classList.add('image-missing');}
+      },{once:true});
+    });
     document.getElementById('year').textContent=new Date().getFullYear();
     const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target);}}),{threshold:.12});
     document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
