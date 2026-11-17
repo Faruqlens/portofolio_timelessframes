@@ -26,7 +26,7 @@
     .nav-cta:hover,.btn:hover{background:var(--accent);color:#17130e}
     .menu-btn{display:none;background:none;color:var(--cream);border:1px solid var(--line);padding:8px 11px}
     .hero{min-height:680px;display:grid;align-items:center;position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
-    .hero-bg{position:absolute;inset:0;background:linear-gradient(90deg,rgba(16,16,15,.97) 0%,rgba(16,16,15,.76) 43%,rgba(16,16,15,.2) 100%),linear-gradient(0deg,var(--bg) 0%,transparent 30%),url('DSC_0010.jpg') center 45%/cover;opacity:.9}
+    .hero-bg{position:absolute;inset:0;background:linear-gradient(90deg,rgba(16,16,15,.97) 0%,rgba(16,16,15,.76) 43%,rgba(16,16,15,.2) 100%),linear-gradient(0deg,var(--bg) 0%,transparent 30%),url('assets/concert-01.jpg') center 45%/cover;opacity:.9}
     .hero-content{position:relative;padding:96px 0 110px;max-width:760px}
     .eyebrow{font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--accent);display:flex;align-items:center;gap:12px}
     .eyebrow:before{content:"";width:34px;height:1px;background:var(--accent)}
@@ -103,7 +103,7 @@
     .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}.reveal.visible{opacity:1;transform:none}
     @media(max-width:800px){
       .wrap{width:min(100% - 32px,var(--max))}.links{display:none;position:absolute;left:0;right:0;top:81px;padding:22px 24px;background:#141412;border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start;gap:18px}.links.open{display:flex}.nav-cta{display:none}.menu-btn{display:block}
-      .hero{min-height:630px}.hero-bg{background-position:60% center;background-image:linear-gradient(90deg,rgba(16,16,15,.94),rgba(16,16,15,.5)),linear-gradient(0deg,var(--bg),transparent 35%),url('DSC_0010.jpg')}
+      .hero{min-height:630px}.hero-bg{background-position:60% center;background-image:linear-gradient(90deg,rgba(16,16,15,.94),rgba(16,16,15,.5)),linear-gradient(0deg,var(--bg),transparent 35%),url('assets/concert-01.jpg')}
       .hero-content{padding:80px 0}.hero-note{display:none}.section{padding:78px 0}.section-head{display:block}.section-head p{margin-top:20px}.about-grid,.contact-grid{grid-template-columns:1fr;gap:38px}.about-image,.about-image img{height:390px;min-height:390px}
       .gallery{grid-template-columns:repeat(2,1fr);gap:10px}.work,.work.wide{grid-column:span 1;min-height:260px}.work.tall{grid-row:span 1;min-height:260px}.work-info{padding:18px 14px}.work-info h3{font-size:20px}
       .services-grid{grid-template-columns:1fr}.service{border-right:0;border-bottom:1px solid var(--line);margin:0;padding:28px 0}.service:last-child{padding:28px 0}.process-grid{grid-template-columns:repeat(2,1fr)}
@@ -115,7 +115,7 @@
   <header class="nav">
     <div class="wrap nav-inner">
       <a class="brand" href="#home" aria-label="Faruq Lens home">
-        <!-- <img src="faruq-lens-logo.png" alt="Logo Faruq Lens"> -->
+        <img src="assets/faruq-lens-logo.png" alt="Logo Faruq Lens">
         <div>FARUQ LENS<span>VISUAL STORYTELLER</span></div>
       </a>
       <nav class="links" id="navLinks">
@@ -141,7 +141,7 @@
     <section class="section" id="about">
       <div class="wrap about-grid">
         <div class="about-image reveal">
-          <img loading="lazy" src="Faruq_profil.jpg" alt="Faruq Lens Profil">
+          <img loading="lazy" src="assets/photographer-portrait.jpg" alt="Kamera fotografi di tangan fotografer">
           <div class="image-tag">Behind every frame — a feeling</div>
         </div>
         <div class="about-copy reveal">
@@ -158,22 +158,21 @@
       <div class="wrap">
         <div class="section-head reveal"><div><div class="eyebrow">Selected stories</div><h2>Timeless Frames<span style="color:var(--accent)">.</span></h2></div><p>Kumpulan momen yang punya cerita. Pilih kategori untuk menjelajahi karya berdasarkan suasana dan jenis produksi.</p></div>
         <div class="filters reveal" role="group" aria-label="Filter portofolio">
-          <button class="filter active" data-filter="all">Semua momen</button><button class="filter" data-filter="event">Event & Community</button><button class="filter" data-filter="portrait">Portrait</button><button class="filter" data-filter="nature">Nature & Landscape</button><button class="filter" data-filter="adventure">Adventure & Documentary</button><button class="filter" data-filter="creative">Creative</button>
+          <button class="filter active" data-filter="all">Semua foto</button><button class="filter" data-filter="concert">Live Concert</button><button class="filter" data-filter="behind">Behind the Scenes</button>
         </div>
         <div class="gallery">
-          <article class="work tall reveal" data-category="nature"><img loading="lazy" src="DSC_0010.jpg" alt="Arsitektur"><div class="work-info"><small>Nature & Architecture · 01</small><h3>Golden Serenity</h3></div></article>
-          <article class="work wide reveal" data-category="event"><img loading="lazy" src="DSC_0001.jpg" alt="Bela diri"><div class="work-info"><small>Event & Community · 02</small><h3>Spirit of Brotherhood</h3></div></article>
-          <article class="work reveal" data-category="portrait"><img loading="lazy" src="DSC_0011.jpg" alt="Potret studio"><div class="work-info"><small>Portrait · 03</small><h3>Studio Session</h3></div></article>
-          <article class="work reveal" data-category="event"><img loading="lazy" src="DSC_0003.jpg" alt="Kumpul bersama"><div class="work-info"><small>Pesantren & Community · 04</small><h3>Moments of Togetherness</h3></div></article>
-          <article class="work reveal" data-category="adventure"><img loading="lazy" src="faruq_kerja.jpg" alt="Bekerja lapangan"><div class="work-info"><small>Behind the Scenes · 05</small><h3>A Moment in Motion</h3></div></article>
-          <article class="work wide reveal" data-category="creative"><img loading="lazy" src="DSC_0008.jpg" alt="Kreatif blur"><div class="work-info"><small>Creative Photography · 06</small><h3>Echoes in the Dark</h3></div></article>
-          <article class="work reveal" data-category="portrait"><img loading="lazy" src="DSC_0009.jpg" alt="Potret kasual indoor"><div class="work-info"><small>Casual Portrait · 07</small><h3>Quiet Moments</h3></div></article>
-          <article class="work tall reveal" data-category="event"><img loading="lazy" src="DSC_0006.jpg" alt="Acara Pernikahan"><div class="work-info"><small>Wedding & Event · 08</small><h3>Timeless Vows</h3></div></article>
-          <article class="work reveal" data-category="portrait"><img loading="lazy" src="DSC_0005.jpg" alt="Portrait outdoor"><div class="work-info"><small>Outdoor Portrait · 09</small><h3>Serene Beauty</h3></div></article>
-          <article class="work wide reveal" data-category="event"><img loading="lazy" src="DSC_0007.jpg" alt="Dokumentasi Panggung"><div class="work-info"><small>Stage Documentation · 10</small><h3>One Night, One Story</h3></div></article>
-          <article class="work reveal" data-category="event"><img loading="lazy" src="DSC_0004.jpg" alt="Group Portrait"><div class="work-info"><small>Group Portrait · 11</small><h3>The People Behind the Memories</h3></div></article>
+          <article class="work tall reveal" data-category="concert"><img loading="lazy" src="assets/concert-01.jpg" alt="Penyanyi tampil di atas panggung di hadapan penonton"><div class="work-info"><small>Live Concert · 01</small><h3>The Crowd Comes Alive</h3></div></article>
+          <article class="work wide reveal" data-category="concert"><img loading="lazy" src="assets/concert-02.jpg" alt="Gitaris tampil dengan pencahayaan panggung merah dan biru"><div class="work-info"><small>Live Concert · 02</small><h3>Strings of the Night</h3></div></article>
+          <article class="work reveal" data-category="concert"><img loading="lazy" src="assets/concert-03.jpg" alt="Gitaris memainkan instrumen di panggung konser"><div class="work-info"><small>Live Concert · 03</small><h3>In the Spotlight</h3></div></article>
+          <article class="work reveal" data-category="concert"><img loading="lazy" src="assets/concert-04.jpg" alt="Momen ekspresif penampilan gitaris di panggung"><div class="work-info"><small>Live Concert · 04</small><h3>Motion in Music</h3></div></article>
+          <article class="work wide reveal" data-category="concert"><img loading="lazy" src="assets/concert-05.jpg" alt="Musisi tampil dengan visual LED berwarna di belakang panggung"><div class="work-info"><small>Live Concert · 05</small><h3>Colors of Sound</h3></div></article>
+          <article class="work reveal" data-category="concert"><img loading="lazy" src="assets/concert-06.jpg" alt="Vokalis berinteraksi dengan penonton di depan panggung"><div class="work-info"><small>Live Concert · 06</small><h3>Closer to the Crowd</h3></div></article>
+          <article class="work tall reveal" data-category="behind"><img loading="lazy" src="assets/concert-07.jpg" alt="Suasana panggung konser sebelum acara dimulai"><div class="work-info"><small>Event Atmosphere · 07</small><h3>Before the Applause</h3></div></article>
+          <article class="work reveal" data-category="behind"><img loading="lazy" src="assets/concert-08.jpg" alt="Kamerawan merekam suasana penonton konser"><div class="work-info"><small>Behind the Scenes · 08</small><h3>Behind Every Frame</h3></div></article>
+          <article class="work wide reveal" data-category="concert"><img loading="lazy" src="assets/concert-09.jpg" alt="Gitaris tampil di bawah cahaya panggung berwarna biru"><div class="work-info"><small>Live Concert · 09</small><h3>Notes to Remember</h3></div></article>
+          <article class="work reveal" data-category="behind"><img loading="lazy" src="assets/concert-10.jpg" alt="Penyanyi tampil dari sudut belakang panggung"><div class="work-info"><small>Stage Perspective · 10</small><h3>From Another Angle</h3></div></article>
         </div>
-        <p style="color:var(--muted);font-size:10px;margin:22px 0 0">Seluruh foto pada galeri ini menggunakan karya dokumentasi yang dipilih untuk menampilkan beragam cerita Faruq Lens.</p>
+        <p style="color:var(--muted);font-size:10px;margin:22px 0 0">Live Concert Series — dokumentasi panggung, musisi, penonton, dan cerita di balik setiap penampilan. Seluruh foto: Faruq Lens.</p>
       </div>
     </section>
 
